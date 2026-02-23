@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quonset Haus — Under Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:      #ffffff;
+      --dark-grey:  #333333;
+      --mid-grey:   #666666;
+      --light-grey: #bbbbbb;
+      --rule-color: rgba(100, 100, 100, 0.2);
+      /* Aptos first (native on Windows 11 / Office 365), DM Sans as web fallback */
+      --font: 'Aptos', 'DM Sans', 'Segoe UI', sans-serif;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--white);
+      color: var(--dark-grey);
+      font-family: var(--font);
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* ── Logo ── */
+    .logo-area { margin-bottom: 2.5rem; }
+
+    .logo-area img {
+      width: 220px;
+      max-width: 65vw;
+      height: auto;
+      display: block;
+    }
+
+    /* Fallback text if image fails to load */
+    .logo-fallback {
+      display: none;
+      font-weight: 700;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--dark-grey);
+      text-align: center;
+    }
+
+    /* ── Divider ── */
+    .rule {
+      width: 48px;
+      height: 1px;
+      background: var(--light-grey);
+      margin: 0 auto 2.4rem;
+    }
+
+    /* ── Tagline in a box ── */
+    .tagline {
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--dark-grey);
+      border: 1.5px solid var(--dark-grey);
+      padding: 0.65rem 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── Sub-message ── */
+    .message {
+      font-weight: 400;
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      color: var(--mid-grey);
+      text-align: center;
+      max-width: 34ch;
+      line-height: 1.8;
+      margin-bottom: 3.2rem;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      border-top: 1px solid var(--rule-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      line-height: 2.4;
+    }
+
+    .contact a {
+      color: var(--dark-grey);
+      text-decoration: none;
+      border-bottom: 1px solid var(--light-grey);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact a:hover {
+      color: #000000;
+      border-color: #000000;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      position: fixed;
+      bottom: 1.8rem;
+      font-weight: 400;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-grey);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="logo-area">
+      <img src="quonset-haus-logo.png" alt="Quonset Haus"
+           onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';" />
+      <span id="logo-fallback" class="logo-fallback">Quonset Haus</span>
+    </div>
+    <div class="rule"></div>
+    <p class="tagline">Under Construction &amp; Coming Soon</p>
+    <p class="message">
+      Unique, Sustainable, Low Maintenance<br>
+      Rural, Modern Homes.
+    </p>
+    <div class="contact">
+      For Inquiries<br>
+      <a href="mailto:hello@quonsethaus.com">hello@quonsethaus.com</a>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Quonset Haus</div>
+
+</body>
+</html>
